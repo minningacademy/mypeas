@@ -76,11 +76,11 @@ fi
 # 1.4 Cron jobs writable by current user
 echo -e "\n[1.4] Writable Cron Jobs:"
 echo -e "---------------------------"
-for cron_file in /etc/crontab /etc/cron.d/* /etc/cron.daily/* /etc/cron.hourly/* /etc/cron.monthly/* /etc/cron.weekly/* /var/spool/cron/crontabs/* 2>/dev/null; do
+for cron_file in /etc/crontab /etc/cron.d/* /etc/cron.daily/* /etc/cron.hourly/* /etc/cron.monthly/* /etc/cron.weekly/* /var/spool/cron/crontabs/*; do
     if [ -f "$cron_file" ] && [ -w "$cron_file" ]; then
         echo "[!] Writable cron file: $cron_file"
     fi
-done
+done 2>/dev/null
 
 
 
